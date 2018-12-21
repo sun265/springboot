@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.springboot.learn.demo2.bean.AccountBean;
 
+
 public interface AccountDao {
 
 	int add(AccountBean bean);

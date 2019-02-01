@@ -1,5 +1,6 @@
+此项目涉及重点
 1、springboot aop使用
-2、beetl模板使用
+2、beetl模板使用  //null
 3、常见注解解释：
    @Controller
    @RestController
@@ -16,6 +17,13 @@
    @ResponseBody   
    @Param 
    @PostConstruct   对面初始化时执行的操作
-4、BeetlSQL工具使用
+4、数据库访问
+   a、BeetlSQL包使用
+                   使用beetlsql自动生成相关代码、dao操作、md文件
+                   
+   b、jdbctemplete
+   c、jpa
+5、druid数据源使用
+   见配置文件
 
    

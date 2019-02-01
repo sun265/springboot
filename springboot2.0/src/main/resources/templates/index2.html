@@ -16,40 +16,31 @@
 	</fieldset>
 	<form class="layui-form" action="json_add" method="post" id="index2">
 		<div class="layui-form-item">
-			<label class="layui-form-label">用户id</label> <input type="text"
-				name="userId" autocomplete="off" class="layui-input">
+			<label class="layui-form-label">id</label> <input type="text"
+				name="id" autocomplete="off" class="layui-input">
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">name</label> <input type="text"
+				name="name" autocomplete="off" class="layui-input">
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">用户姓名</label> <input type="text"
-				name="userName" autocomplete="off" class="layui-input">
+			<label class="layui-form-label">money</label> <input type="text"
+				name="money" autocomplete="off" class="layui-input">
 		</div>
 		<div class="layui-input-block">
 			<button class="layui-btn" lay-submit="submit" lay-filter="index2">提交</button>
 		</div>
 	</form>
 	<script src="/js/layui/layui.js"></script>
-	<script >
-	layui.use('form',function(){
-		var $ = jQuery = layui.$;
-		var form = layui.form;
-		form.on('submit(index2)',function(data){
-			console.log(JSON.stringify(data.field));
+	<script>
+		layui.use('form', function() {
+			var $ = jQuery = layui.$;
+			var form = layui.form;
+			form.on('submit(index2)', function(data) {
+				console.log(JSON.stringify(data.field));
+			});
 		});
-	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	</script>
 </body>
 </html>

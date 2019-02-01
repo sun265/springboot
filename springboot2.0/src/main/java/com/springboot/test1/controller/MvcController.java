@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springboot.test1.bean.UserBean;
+import com.springboot.test1.bean.User;
 import com.springboot.test1.server.UserServer;
 
 /**
@@ -27,15 +27,12 @@ public class MvcController {
 	
 	@Autowired
 	private UserServer user;
-	@Autowired
-    private ObjectMapper mapper;
-
 	@RequestMapping("add")
 	public String add(@RequestParam int userId,@RequestParam String userName,Model model) {
-		UserBean bean = new UserBean();
-		bean.setUserId(userId);
-		bean.setUserName(userName);
-		user.add(bean);
+		User bean = new User();
+		bean.setId(userId);
+		bean.setName(userName);
+		//user.add(bean);
 		model.addAttribute("userId",userId);
 		model.addAttribute("userName",userName);
 		return "index";
@@ -51,10 +48,9 @@ public class MvcController {
 	 */
 	@RequestMapping(value="json_add",method=RequestMethod.POST)
 	@ResponseBody
-	public UserBean add1(UserBean bean) {
-		
-		
-		return user.add(bean);		
+	public void add1(User bean) {		
+		System.out.println(bean.toString());
+		//user.add(bean);		
 	}
 	@SuppressWarnings("deprecation")
 	@RequestMapping("now")

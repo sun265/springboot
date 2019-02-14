@@ -1,28 +1,23 @@
 package com.springboot.jpa.entity;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
+@Data
 @Entity
 public class Users {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	@Column
-	private Date creatTime;
-	@Column
+	@Column(name="department_id")
 	private Integer departmentId;
-	@Column
+	@Column(name="user_name")
 	private String userName;
 	
 }

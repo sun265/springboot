@@ -1,6 +1,7 @@
 package com.springboot.jpa.server;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,10 +28,27 @@ public class UserServer {
 	 * 插入或更新
 	 * @param users
 	 */
-	public void save(Users users) {
-		
+	public Users save(Users users) {
 		user.save(users);
-		
+		return users;
 	}
 	
+	public Users findById(int id) {
+
+       return user.findById(id);
+	}
+	/**
+	 * 根据id删除
+	 * @param id
+	 * @return
+	 */
+	public Boolean delete(int id) {
+		
+		try {
+			user.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+			}
 }

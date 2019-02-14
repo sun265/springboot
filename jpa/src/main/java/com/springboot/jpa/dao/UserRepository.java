@@ -6,4 +6,5 @@ import com.springboot.jpa.entity.Users;
 
 public interface UserRepository extends JpaRepository<Users, Integer>{
 
+	Users findById(int id);
 }
